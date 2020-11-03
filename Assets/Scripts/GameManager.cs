@@ -9,16 +9,41 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject Confetti;
+    public int currentLevel;
+    int MaxLevelNumber = 4;
 
     #region UIElements
+    public Text LevelText;
     public GameObject LeanCanvas;
     public GameObject WinPanel, LosePanel;
-
     #endregion
+
+    private void Start()
+    {
+        currentLevel = PlayerPrefs.GetInt("LevelId");
+        LevelText.text = "Level " + currentLevel;
+    }
 
     public void NextLevelClick()
     {
-
+        Debug.Log(currentLevel);
+        if (currentLevel > MaxLevelNumber)
+        {
+            int rand = Random.Range(1, MaxLevelNumber);
+            if (rand == PlayerPrefs.GetInt("LastRandomLevel"))
+            {
+                rand = Random.Range(1, MaxLevelNumber);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("LastRandomLevel", rand);
+            }
+            SceneManager.LoadScene("Level" + rand);
+        }
+        else
+        {
+            SceneManager.LoadScene("Level" + currentLevel);
+        }
     }
 
     public void RetryClick()
@@ -32,6 +57,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         LeanCanvas.SetActive(false);
         WinPanel.SetActive(true);
+        currentLevel++;
+        PlayerPrefs.SetInt("LevelId", currentLevel);
     }
 
     IEnumerator WaitAndOpenLosePanel()
@@ -44,11 +71,15 @@ public class GameManager : MonoBehaviour
     #region Game type 1
     public void RightImageClicked()
     {
+        if (PlayerPrefs.GetInt("VIBRATION") == 1)
+            TapticManager.Impact(ImpactFeedback.Light);
         StartCoroutine(WaitAndOpenWinPanel());
     }
 
     public void WrongImageClicked()
     {
+        if (PlayerPrefs.GetInt("VIBRATION") == 1)
+            TapticManager.Impact(ImpactFeedback.Medium);
         StartCoroutine(WaitAndOpenLosePanel());
     }
 
@@ -80,10 +111,14 @@ public class GameManager : MonoBehaviour
             {//Right word                
                 HoverText.text = selectedDragBox.GetComponentInChildren<Text>().text;
                 selectedDragBox.SetActive(false);
+                if (PlayerPrefs.GetInt("VIBRATION") == 1)
+                    TapticManager.Impact(ImpactFeedback.Light);
                 StartCoroutine(WaitAndOpenWinPanel());
             }
             else
             {//Wrong word
+                if (PlayerPrefs.GetInt("VIBRATION") == 1)
+                    TapticManager.Impact(ImpactFeedback.Medium);
                 WrongPanel.GetComponent<Animation>().Play();
                 StartCoroutine(WaitAndOpenLosePanel());
             }
