@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public int currentLevel;
     int MaxLevelNumber = 4;
 
+    public bool isTexting;
+    public Image lastText;
+    public Sprite trueSprite, falseSprite;
+
     #region UIElements
     public Text LevelText;
     public GameObject LeanCanvas;
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitAndOpenWinPanel()
     {
         Confetti.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         LeanCanvas.SetActive(false);
         WinPanel.SetActive(true);
         currentLevel++;
@@ -63,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitAndOpenLosePanel()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         LosePanel.SetActive(true);
         LeanCanvas.SetActive(false);
     }
@@ -73,6 +77,11 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("VIBRATION") == 1)
             TapticManager.Impact(ImpactFeedback.Light);
+        if (isTexting)
+        {
+            lastText.GetComponent<Animator>().enabled = false;
+            lastText.GetComponent<Image>().sprite = trueSprite;
+        }
         StartCoroutine(WaitAndOpenWinPanel());
     }
 
@@ -80,6 +89,11 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("VIBRATION") == 1)
             TapticManager.Impact(ImpactFeedback.Medium);
+        if (isTexting)
+        {
+            lastText.GetComponent<Animator>().enabled = false;
+            lastText.GetComponent<Image>().sprite = falseSprite;
+        }
         StartCoroutine(WaitAndOpenLosePanel());
     }
 
