@@ -1222,6 +1222,7 @@ MonoBehaviour:
   LeanCanvas: {fileID: 927558416}
   WinPanel: {fileID: 1496598745}
   LosePanel: {fileID: 377898747}
+  TutorialCanvas: {fileID: 0}
   WrongPanel: {fileID: 0}
   HoverText: {fileID: 0}
   gr: {fileID: 0}

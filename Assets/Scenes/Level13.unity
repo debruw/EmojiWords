@@ -3752,6 +3752,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4303105382390296651, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1289702681}
     - target: {fileID: 8072572236249167158, guid: ca8d402d33bffc44091a702d235d9b27,
         type: 3}
       propertyPath: m_Name
@@ -3919,8 +3924,34 @@ PrefabInstance:
       objectReference: {fileID: 1289702681}
     - target: {fileID: 8072572237487756833, guid: ca8d402d33bffc44091a702d235d9b27,
         type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072572237487756833, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1289702681}
-    m_RemovedComponents: []
+    - target: {fileID: 8072572237487756833, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1289702681}
+    - target: {fileID: 8072572237487756833, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WrongImageClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072572237487756833, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072572237487756833, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8072572237487756846, guid: ca8d402d33bffc44091a702d235d9b27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca8d402d33bffc44091a702d235d9b27, type: 3}

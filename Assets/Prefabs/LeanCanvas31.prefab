@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3441527172260424138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1346,7 +1346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8072572236753462065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1851,6 +1851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8072572236953202177}
   - component: {fileID: 8072572236953202190}
+  - component: {fileID: 4303105382390296651}
   m_Layer: 5
   m_Name: Hovers
   m_TagString: Untagged
@@ -1897,6 +1898,21 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &4303105382390296651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072572236953202176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c70527c53abd74186e2f2339a95cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object1: {fileID: 4565340607479516268}
+  Object2: {fileID: 8072572236753462064}
+  Object3: {fileID: 8072572237487756835}
 --- !u!1 &8072572236957190657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,14 +2744,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8072572237487756832}
   - component: {fileID: 8072572237487756833}
-  - component: {fileID: 8072572237487756846}
   m_Layer: 5
   m_Name: Touch Button (LeanButton) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8072572237487756832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2832,7 +2847,7 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8072572237487756846}
+      - m_Target: {fileID: 0}
         m_MethodName: Shake
         m_Mode: 4
         m_Arguments:
@@ -2843,42 +2858,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: WrongImageClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8072572237487756846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8072572237487756835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3d039e2a77ffd42a7c3bd2a21c98ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  strength: 0
-  multiplier: 1
-  dampening: 1
-  reduction: 5
-  shakePosition: {x: 1, y: 0, z: 0}
-  shakeRotation: {x: 0, y: 0, z: 0}
-  offsetPosition: {x: 0, y: 0, z: 0}
-  offsetRotation: {x: 0, y: 0, z: 0}
-  localPosition: {x: 0, y: 0, z: 0}
-  localRotation: {x: 0, y: 0, z: 0, w: 0}
-  expectedPosition: {x: 0, y: 0, z: 0}
-  expectedRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8072572237497069477
 GameObject:
   m_ObjectHideFlags: 0

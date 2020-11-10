@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         starCount = PlayerPrefs.GetInt("StarCount");
         StarText.text = starCount.ToString();
         LevelText.text = "Level " + currentLevel;
-        if (currentLevel == 1 || currentLevel == 7 || currentLevel == 13)
+        if (currentLevel == 1 || currentLevel == 7)
         {
             if (TutorialCanvas != null)
             {
