@@ -1934,7 +1934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6839622, g: 0.8458491, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2359,11 +2359,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Confetti: {fileID: 1718153273}
   currentLevel: 0
+  starCount: 0
   isTexting: 1
   lastText: {fileID: 1569002537}
   trueSprite: {fileID: 21300000, guid: dbaec2b516c618641a745e70b21f79be, type: 3}
   falseSprite: {fileID: 21300000, guid: 17e50d8577b38f34b9c66643535b3074, type: 3}
   LevelText: {fileID: 1399240585}
+  StarText: {fileID: 0}
   LeanCanvas: {fileID: 927558416}
   WinPanel: {fileID: 1496598745}
   LosePanel: {fileID: 377898747}
@@ -3314,7 +3316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6839622, g: 0.8458491, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3426,6 +3428,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeanCanvas4
       objectReference: {fileID: 0}
+    - target: {fileID: 8072572237010274977, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072572237010274977, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072572237010274977, guid: ca8d402d33bffc44091a702d235d9b27,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8072572236228931844, guid: ca8d402d33bffc44091a702d235d9b27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3536,21 +3553,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 689042397}
-    - target: {fileID: 8072572237010274977, guid: ca8d402d33bffc44091a702d235d9b27,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8072572237010274977, guid: ca8d402d33bffc44091a702d235d9b27,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8072572237010274977, guid: ca8d402d33bffc44091a702d235d9b27,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8072572235535207684, guid: ca8d402d33bffc44091a702d235d9b27,
         type: 3}
       propertyPath: m_Color.r

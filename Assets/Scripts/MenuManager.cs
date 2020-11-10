@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public int currentLevel;
-    int MaxLevelNumber = 4;
+    int MaxLevelNumber = 30;
     int rand;
 
     private void Start()

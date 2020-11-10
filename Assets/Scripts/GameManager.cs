@@ -9,28 +9,37 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject Confetti;
-    public int currentLevel;
-    int MaxLevelNumber = 4;
+    public int currentLevel, starCount;
+    int MaxLevelNumber = 30;
 
     public bool isTexting;
     public Image lastText;
     public Sprite trueSprite, falseSprite;
 
     #region UIElements
-    public Text LevelText;
+    public Text LevelText, StarText;
     public GameObject LeanCanvas;
     public GameObject WinPanel, LosePanel;
+    public GameObject TutorialCanvas;
     #endregion
 
     private void Start()
     {
         currentLevel = PlayerPrefs.GetInt("LevelId");
+        starCount = PlayerPrefs.GetInt("StarCount");
+        StarText.text = starCount.ToString();
         LevelText.text = "Level " + currentLevel;
+        if (currentLevel == 1 || currentLevel == 7 || currentLevel == 13)
+        {
+            if (TutorialCanvas != null)
+            {
+                TutorialCanvas.SetActive(true);
+            }
+        }
     }
 
     public void NextLevelClick()
     {
-        Debug.Log(currentLevel);
         if (currentLevel > MaxLevelNumber)
         {
             int rand = Random.Range(1, MaxLevelNumber);
@@ -58,15 +67,32 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitAndOpenWinPanel()
     {
         Confetti.SetActive(true);
+        if (TutorialCanvas != null)
+        {
+            if (TutorialCanvas.activeSelf)
+            {
+                TutorialCanvas.SetActive(false);
+            }
+        }
         yield return new WaitForSeconds(1.5f);
         LeanCanvas.SetActive(false);
         WinPanel.SetActive(true);
         currentLevel++;
         PlayerPrefs.SetInt("LevelId", currentLevel);
+        starCount += 2;
+        PlayerPrefs.SetInt("StarCount", starCount);
+        StarText.text = starCount.ToString();
     }
 
     IEnumerator WaitAndOpenLosePanel()
     {
+        if (TutorialCanvas != null)
+        {
+            if (TutorialCanvas.activeSelf)
+            {
+                TutorialCanvas.SetActive(false);
+            }
+        }
         yield return new WaitForSeconds(1.5f);
         LosePanel.SetActive(true);
         LeanCanvas.SetActive(false);

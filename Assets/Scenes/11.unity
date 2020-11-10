@@ -1212,11 +1212,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Confetti: {fileID: 1718153273}
   currentLevel: 0
+  starCount: 0
   isTexting: 0
   lastText: {fileID: 0}
   trueSprite: {fileID: 0}
   falseSprite: {fileID: 0}
   LevelText: {fileID: 1399240585}
+  StarText: {fileID: 0}
   LeanCanvas: {fileID: 927558416}
   WinPanel: {fileID: 1496598745}
   LosePanel: {fileID: 377898747}
@@ -1911,7 +1913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6839622, g: 0.8458491, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2973,7 +2975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6839622, g: 0.8458491, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
