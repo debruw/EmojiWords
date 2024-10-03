@@ -9,4 +9,4 @@ Made with Unity 2019.2.8f1
 * Taptic
   
 # Gameplay Video
-[![Emoji Words](https://img.youtube.com/vi/a-iOtRClI-8/0.jpg)](https://www.youtube.com/watch?v=a-iOtRClI-8)
+[![Emoji Words](https://img.youtube.com/vi/qjBqUlxXZXk/0.jpg)](https://www.youtube.com/watch?v=qjBqUlxXZXk)
